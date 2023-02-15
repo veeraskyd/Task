@@ -2,28 +2,28 @@ name: Parallel App Build Workflow
 on: [push]
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - run: |
           echo "Build Application"
           # [...]
   integration-testing:
     needs: build
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - run: |
           echo "Integration Testing"
           # [...]
   functional-testing:
     needs: build
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - run: |
           echo "Functional Testing"
           # [...]
   deploy:
     needs: [integration-testing, functional-testing]
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - run: |
           echo "Deploy Application"
