@@ -1,0 +1,22 @@
+name: stages workflow
+on: [push]
+jobs:
+  build:
+   runs-on: ubuntu-latest
+   steps:
+    - name: need to check out
+      uses: actions/checkout@v2
+    -  name: build
+       run: |
+        echo "build application"
+  test:   
+   runs-on: ubuntu-latest
+   steps:
+    - name: need to check out
+      uses: actions/checkout@v2
+    -  name: install dependencies
+       run: |
+        echo "installing dependencies"
+    -  name: Run tests
+       run: |
+        echo "running test"
